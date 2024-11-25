@@ -5,14 +5,13 @@ import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.client.rendering.v1.HudRenderCallback;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.DrawContext;
-import net.minecraft.client.render.RenderTickCounter;
 import net.minecraft.entity.player.PlayerEntity;
 
 @Environment(EnvType.CLIENT)
 public class CoordsHud implements HudRenderCallback {
 
     @Override
-    public void onHudRender(DrawContext drawContext, RenderTickCounter tickCounter) {
+    public void onHudRender(DrawContext drawContext, float v) {
         MinecraftClient client = MinecraftClient.getInstance();
         PlayerEntity player = client.player;
 
