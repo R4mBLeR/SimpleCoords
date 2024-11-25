@@ -4,14 +4,15 @@ import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.client.rendering.v1.HudRenderCallback;
 import net.minecraft.client.MinecraftClient;
-import net.minecraft.client.gui.DrawContext;
+import net.minecraft.client.gui.DrawableHelper;
+import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.entity.player.PlayerEntity;
 
 @Environment(EnvType.CLIENT)
 public class CoordsHud implements HudRenderCallback {
 
     @Override
-    public void onHudRender(DrawContext drawContext, float v) {
+    public void onHudRender(MatrixStack matrixStack, float v) {
         MinecraftClient client = MinecraftClient.getInstance();
         PlayerEntity player = client.player;
 
@@ -29,9 +30,9 @@ public class CoordsHud implements HudRenderCallback {
             int textHeight = client.textRenderer.fontHeight;
             int padding = 2;
             int offset = 5;
-            drawContext.fill(0, 0, textWidth + padding + offset, posY + 2 * textHeight + padding, 0x30000000);
-            drawContext.drawTextWithShadow(client.textRenderer, coords, posX, posY, 0xFFFFFF);
-            drawContext.drawTextWithShadow(client.textRenderer, facing, posX, posY + textHeight + 1, 0xFFFFFF);
+            DrawableHelper.fill(matrixStack, 0, 0, textWidth + padding + offset, posY + 2 * textHeight + padding, 0x30000000);
+            DrawableHelper.drawStringWithShadow(matrixStack, client.textRenderer, coords, posX, posY, 0xFFFFFF);
+            DrawableHelper.drawStringWithShadow(matrixStack, client.textRenderer, facing, posX, posY + textHeight + 1, 0xFFFFFF);
         }
     }
 }
