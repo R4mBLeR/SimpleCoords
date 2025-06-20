@@ -6,9 +6,9 @@ import net.fabricmc.fabric.api.client.rendering.v1.HudRenderCallback;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.render.RenderTickCounter;
-import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.entity.player.PlayerEntity;
 import net.r4mble.simplecoords.SimpleCoordsClient;
+import org.joml.Matrix3x2fStack;
 
 @Environment(EnvType.CLIENT)
 public class CoordsHud implements HudRenderCallback {
@@ -30,9 +30,9 @@ public class CoordsHud implements HudRenderCallback {
             String fps;
             String biome;
             if (SimpleCoordsClient.config.HudScale() > 0f) {
-                MatrixStack matrices = drawContext.getMatrices();
-                matrices.push();
-                matrices.scale(SimpleCoordsClient.config.HudScale(), SimpleCoordsClient.config.HudScale(), 1);
+                Matrix3x2fStack matrices = drawContext.getMatrices();
+                matrices.pushMatrix();
+                matrices.scale(SimpleCoordsClient.config.HudScale(), SimpleCoordsClient.config.HudScale());
                 if (SimpleCoordsClient.config.showCoords()) {
                     double x = player.getX();
                     double y = player.getY();
@@ -67,7 +67,7 @@ public class CoordsHud implements HudRenderCallback {
                 if (drawCount > 0) {
                     drawContext.fill(0, 0, textWidth + padding + offset, posY + drawCount * textHeight + padding, SimpleCoordsClient.config.backgroundColor());
                 }
-                matrices.pop();
+                matrices.popMatrix();
             }
         }
     }

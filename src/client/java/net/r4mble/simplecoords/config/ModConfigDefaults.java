@@ -6,7 +6,7 @@ public class ModConfigDefaults implements ModConfig {
     public static final boolean showFacing = false;
     public static final boolean showBiome = false;
     public static final boolean showFPS = false;
-    public static final int textColor = 0xFFFFFF;
+    public static final int textColor = 0xFFFFFFFF;
     public static final int backgroundColor = 0x30000000;
 
     @Override

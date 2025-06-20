@@ -11,7 +11,7 @@ public class ModConfigData implements ConfigData, ModConfig {
     public boolean showFacing = ModConfigDefaults.showFacing;
     public boolean showBiome = ModConfigDefaults.showBiome;
     public boolean showFPS = ModConfigDefaults.showFPS;
-    @ConfigEntry.ColorPicker
+    @ConfigEntry.ColorPicker(allowAlpha = true)
     public int textColor = ModConfigDefaults.textColor;
     @ConfigEntry.ColorPicker(allowAlpha = true)
     public int backgroundColor = ModConfigDefaults.backgroundColor;
