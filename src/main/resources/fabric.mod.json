@@ -43,6 +43,6 @@
   },
   "suggests": {
     "cloth-config2": ">=19.0.147",
-    "modmenu": ">=15.0.0-beta.2"
+    "modmenu": ">=15.0.0"
   }
 }
