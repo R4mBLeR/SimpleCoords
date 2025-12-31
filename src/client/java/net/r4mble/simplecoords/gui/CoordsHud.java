@@ -54,7 +54,7 @@ public class CoordsHud implements HudRenderCallback {
 
                 }
                 if (SimpleCoordsClient.config.showBiome()) {
-                    biome = "Biome: " + player.getWorld().getBiome(player.getBlockPos()).getIdAsString();
+                    biome = "Biome: " + player.getEntityWorld().getBiome(player.getBlockPos()).getIdAsString();
                     textWidth = Math.max(textWidth, client.textRenderer.getWidth(biome));
                     biomeNumber = drawCount;
                     drawCount++;
