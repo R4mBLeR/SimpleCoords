@@ -28,13 +28,6 @@
       "net.r4mble.simplecoords.ModMenuIntegration"
     ]
   },
-  "mixins": [
-    "simplecoords.mixins.json",
-    {
-      "config": "simplecoords.client.mixins.json",
-      "environment": "client"
-    }
-  ],
   "depends": {
     "fabricloader": ">=0.19.2",
     "minecraft": ">=26.1",

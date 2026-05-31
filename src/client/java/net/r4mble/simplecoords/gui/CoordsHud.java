@@ -62,7 +62,7 @@ public class CoordsHud {
 
                 }
                 if (SimpleCoordsClient.config.showBiome()) {
-                    biome = "Biome: " + player.level().getBiome(player.blockPosition());
+                    biome = "Biome: " + player.level().getBiome(player.blockPosition()).getRegisteredName();
                     textWidth = Math.max(textWidth, client.gui.getFont().width(biome));
                     biomeNumber = drawCount;
                     drawCount++;
