@@ -37,7 +37,14 @@ public class CoordsHud implements HudRenderCallback {
                     double x = player.getX();
                     double y = player.getY();
                     double z = player.getZ();
-                    coords = String.format("X: %.2f Y: %.2f Z: %.2f", x, y, z).replace(',', '.');
+                    if(SimpleCoordsClient.config.showFractionalCoords()) {
+                        coords = String.format("X: %.2f Y: %.2f Z: %.2f", x, y, z).replace(',', '.');
+                    } else {
+                        long IntX = Math.round(x);
+                        long IntY = Math.round(y);
+                        long IntZ = Math.round(z);
+                        coords = String.format("X: %d Y: %d Z: %d", IntX, IntY, IntZ).replace(',', '.');
+                    }
                     textWidth = Math.max(textWidth, client.textRenderer.getWidth(coords));
                     drawContext.drawTextWithShadow(client.textRenderer, coords, posX, posY, SimpleCoordsClient.config.textColor());
                     drawCount++;

@@ -4,6 +4,7 @@ public interface ModConfig {
     float HudScale();
 
     boolean showCoords();
+    boolean showFractionalCoords();
 
     boolean showFacing();
 
