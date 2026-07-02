@@ -8,6 +8,7 @@ import me.shedaniel.autoconfig.annotation.ConfigEntry;
 public class ModConfigData implements ConfigData, ModConfig {
     public float HudScale = ModConfigDefaults.HudScale;
     public boolean showCoords = ModConfigDefaults.showCoords;
+    public boolean showFractionalCoords = ModConfigDefaults.showFractionalCoords;
     public boolean showFacing = ModConfigDefaults.showFacing;
     public boolean showBiome = ModConfigDefaults.showBiome;
     public boolean showFPS = ModConfigDefaults.showFPS;
@@ -27,6 +28,11 @@ public class ModConfigData implements ConfigData, ModConfig {
     @Override
     public boolean showCoords() {
         return showCoords;
+    }
+
+    @Override
+    public boolean showFractionalCoords() {
+        return showFractionalCoords;
     }
 
     @Override
