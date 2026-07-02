@@ -2,6 +2,7 @@
   "text.autoconfig.simplecoords.title": "Simple Coords Options",
   "text.autoconfig.simplecoords.option.HudScale": "HUD Scale",
   "text.autoconfig.simplecoords.option.showCoords": "Show Coordinates",
+  "text.autoconfig.simplecoords.option.showFractionalCoords": "Show Fractional Coordinates",
   "text.autoconfig.simplecoords.option.showFacing": "Show Facing",
   "text.autoconfig.simplecoords.option.showFPS": "Show Fps",
   "text.autoconfig.simplecoords.option.showBiome": "Show Biome",
